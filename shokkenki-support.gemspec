@@ -3,7 +3,7 @@ $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 require 'shokkenki/support/version'
 
 Gem::Specification.new do |s|
-  s.name = 'shokkenki support'
+  s.name = 'shokkenki-support'
   s.version = Shokkenki::Support::Version::STRING
   s.platform = Gem::Platform::RUBY
   s.license = 'GPL2'
