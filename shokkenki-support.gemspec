@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary = "shokkenki-support-#{Shokkenki::Support::Version::STRING}"
   s.description = 'Shared support for Shokkenki consumers and providers.'
 
-  s.files = `git ls-files -- lib/*`.split("\n")
+  s.files = `git ls-files -- lib/*`.split("\n") + Dir.glob('lib/shokkenki/term/ruby-string-random/**/*')
   s.test_files = s.files.grep(%r{^spec/})
   s.rdoc_options = ['--charset=UTF-8']
   s.require_path = 'lib'
