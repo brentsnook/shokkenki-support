@@ -1,4 +1,4 @@
 
 [submodule "lib/shokkenki/term/ruby-string-random"]
 	path = lib/shokkenki/term/ruby-string-random
-	url = https://github.com/repeatedly/ruby-string-random.git
+	url = https://github.com/brentsnook/ruby-string-random.git
