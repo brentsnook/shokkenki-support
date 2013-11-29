@@ -1,4 +1,4 @@
-# Shokkenki Support
+# Shokkenki Support [![Build Status](https://secure.travis-ci.org/brentsnook/shokkenki-support.png?branch=master)](http://travis-ci.org/brentsnook/shokkenki-support)
 
 Shared support code for [Shokkenki](https://github.com/brentsnook/shokkenki).
 
