@@ -19,12 +19,12 @@ module Shokkenki
       def to_hash
         {
           :type => @type,
-          :value => @value.to_s
+          :value => @value.inspect
         }
       end
 
       def example
-        StringRandom.random_regex @value.to_s
+        StringRandom.random_regex @value.inspect
       end
 
       def match? compare

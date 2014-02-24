@@ -94,7 +94,7 @@ describe Shokkenki::Term::RegexpTerm do
     end
 
     it 'has a value that is the string representation of the regex' do
-      expect(subject.to_hash[:value]).to eq('(?-mix:sausages)')
+      expect(subject.to_hash[:value]).to eq('/sausages/')
     end
   end
 end
