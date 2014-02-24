@@ -28,7 +28,7 @@ module Shokkenki
       end
 
       def self.from_json json
-        factory_for(json['type']).from_json json
+        factory_for(json['type'] || json[:type]).from_json json
       end
     end
   end

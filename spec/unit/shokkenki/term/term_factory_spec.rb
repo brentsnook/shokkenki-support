@@ -7,11 +7,6 @@ describe Shokkenki::Term::TermFactory do
 
     let(:terminator) { double 'terminator' }
     let(:terminator_class) { double('terminator class', :from_json => terminator) }
-    let(:term) do
-      subject.from_json(
-        'type' => 'terminator'
-      )
-    end
 
     before do
       allow(subject).to(
@@ -19,9 +14,33 @@ describe Shokkenki::Term::TermFactory do
       )
     end
 
-    it 'creates a term as the correct type' do
-      expect(term).to be(terminator)
+    context 'when the type key is a string' do
+
+      let(:term) do
+        subject.from_json(
+          'type' => 'terminator'
+        )
+      end
+
+      it 'creates a term as the correct type' do
+        expect(term).to be(terminator)
+      end
     end
+
+    context 'when the type key is a symbol' do
+
+      let(:term) do
+        subject.from_json(
+          :type => 'terminator'
+        )
+      end
+
+      it 'creates a term as the correct type' do
+        expect(term).to be(terminator)
+      end
+    end
+
+
   end
 
   context 'finding a term factory for a type' do
