@@ -19,16 +19,22 @@ module Shokkenki
       def to_hash
         {
           :type => @type,
-          :value => @value.inspect
+          :value => value_string
         }
       end
 
       def example
-        StringRandom.random_regex @value.inspect
+        StringRandom.random_regex value_string
       end
 
       def match? compare
         compare && !@value.match(compare.to_s).nil?
+      end
+
+      private
+
+      def value_string
+        @value.inspect[1..-2] # remove slashes
       end
     end
   end
