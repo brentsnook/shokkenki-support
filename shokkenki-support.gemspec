@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9'
 
   s.add_runtime_dependency 'json'
-  s.add_runtime_dependency 'activesupport'
+  s.add_runtime_dependency 'activesupport', '>= 3.0.0'
   s.add_runtime_dependency 'jsonpath'
 
   s.add_development_dependency 'rake', '~> 10.0.0'
