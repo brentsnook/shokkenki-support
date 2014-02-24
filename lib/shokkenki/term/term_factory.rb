@@ -3,6 +3,7 @@ require_relative 'hash_term'
 require_relative 'regexp_term'
 require_relative 'number_term'
 require_relative 'json_paths_term'
+require 'active_support/core_ext/hash/keys'
 
 module Shokkenki
   module Term
@@ -28,7 +29,8 @@ module Shokkenki
       end
 
       def self.from_json json
-        factory_for(json['type'] || json[:type]).from_json json
+        symbolized_json = json.symbolize_keys
+        factory_for(symbolized_json[:type]).from_json symbolized_json
       end
     end
   end

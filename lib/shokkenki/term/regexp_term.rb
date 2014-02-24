@@ -8,7 +8,7 @@ module Shokkenki
       attr_reader :type, :value
 
       def self.from_json json
-        new json['value']
+        new json[:value]
       end
 
       def initialize value

@@ -25,7 +25,7 @@ describe Shokkenki::Term::JsonPathsTerm do
   context 'created from json' do
     let(:term) do
       Shokkenki::Term::JsonPathsTerm.from_json(
-        'value' => {'$.thing' => {'childterm' => 'json'}}
+        :value => {'$.thing' => {'childterm' => 'json'}}
       )
     end
 

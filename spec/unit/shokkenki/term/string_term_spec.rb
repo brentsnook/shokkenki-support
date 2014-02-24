@@ -18,7 +18,7 @@ describe Shokkenki::Term::StringTerm do
   context 'created from json' do
     let(:term) do
       Shokkenki::Term::StringTerm.from_json(
-        'value' => 'some value'
+        :value => 'some value'
       )
     end
 

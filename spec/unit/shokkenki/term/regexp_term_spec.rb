@@ -18,7 +18,7 @@ describe Shokkenki::Term::RegexpTerm do
   context 'created from json' do
     let(:term) do
       Shokkenki::Term::RegexpTerm.from_json(
-        'value' => 'value regex'
+        :value => 'value regex'
       )
     end
 

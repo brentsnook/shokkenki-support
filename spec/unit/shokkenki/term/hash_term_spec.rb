@@ -29,7 +29,7 @@ describe Shokkenki::Term::HashTerm do
 
     let(:term) do
       Shokkenki::Term::HashTerm.from_json(
-        'value' => {'child' => {'childterm' => 'json'}}
+        :value => {'child' => {'childterm' => 'json'}}
       )
     end
 

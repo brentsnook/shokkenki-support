@@ -19,7 +19,7 @@ describe Shokkenki::Term::NumberTerm do
   context 'created from json' do
     let(:term) do
       Shokkenki::Term::NumberTerm.from_json(
-        'value' => 9
+        :value => 9
       )
     end
 

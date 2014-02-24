@@ -8,7 +8,7 @@ module Shokkenki
       attr_reader :type, :value
 
       def self.from_json json
-        values = json['value'].inject({}) do |hash, kv|
+        values = json[:value].inject({}) do |hash, kv|
           key, value = *kv
           hash[key.to_sym] = TermFactory.from_json(value)
           hash
