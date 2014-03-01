@@ -18,7 +18,7 @@ module Shokkenki
       def to_hash
         {
           :type => @type,
-          :value => @value
+          :value => @value.iso8601
         }
       end
 

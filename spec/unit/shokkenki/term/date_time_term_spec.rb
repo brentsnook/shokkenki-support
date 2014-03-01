@@ -75,20 +75,16 @@ describe Shokkenki::Term::DateTimeTerm do
 
   end
 
+  context 'as a hash' do
+
+    subject { Shokkenki::Term::DateTimeTerm.new DateTime.parse('2001-02-03T04:05:06+07:00') }
+
+    it 'has a type' do
+      expect(subject.to_hash[:type]).to eq(:date_time)
+    end
+
+    it 'has a value which is the ISO8601 representation of the date time' do
+      expect(subject.to_hash[:value]).to eq('2001-02-03T04:05:06+07:00')
+    end
+  end
 end
-
-
-
-#   context 'as a hash' do
-
-#     subject { Shokkenki::Term::DateTerm.new Date.new(2014, 5, 4) }
-
-#     it 'has a type' do
-#       expect(subject.to_hash[:type]).to eq(:date)
-#     end
-
-#     it 'has a value which is the ISO8601 representation of the date' do
-#       expect(subject.to_hash[:value]).to eq('2014-05-04')
-#     end
-#   end
-# end
