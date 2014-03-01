@@ -5,7 +5,7 @@ module Shokkenki
   module Term
     class HashTerm < Term
 
-      attr_reader :type, :value
+      def self.type; :hash; end
 
       def self.from_json json
         values = json[:value].inject({}) do |hash, kv|
@@ -23,8 +23,6 @@ module Shokkenki
           mapped[k] = v.to_shokkenki_term
           mapped
         end
-
-        @type = :hash
       end
 
       def to_hash
@@ -35,7 +33,7 @@ module Shokkenki
         end
 
         {
-          :type => @type,
+          :type => type,
           :value => mapped_values
         }
       end

@@ -4,7 +4,7 @@ module Shokkenki
   module Term
     class StringTerm < Term
 
-      attr_reader :type, :value
+      def self.type; :string; end
 
       def self.from_json json
         new json[:value]
@@ -12,12 +12,11 @@ module Shokkenki
 
       def initialize value
         @value = value.to_s
-        @type = :string
       end
 
       def to_hash
         {
-          :type => @type,
+          :type => type,
           :value => @value
         }
       end

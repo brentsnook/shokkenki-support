@@ -5,7 +5,7 @@ module Shokkenki
   module Term
     class RegexpTerm < Term
 
-      attr_reader :type, :value
+      def self.type; :regexp; end
 
       def self.from_json json
         new json[:value]
@@ -13,12 +13,11 @@ module Shokkenki
 
       def initialize value
         @value = Regexp.new value
-        @type = :regexp
       end
 
       def to_hash
         {
-          :type => @type,
+          :type => type,
           :value => value_string
         }
       end

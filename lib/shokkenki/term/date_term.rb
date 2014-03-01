@@ -5,7 +5,7 @@ module Shokkenki
   module Term
     class DateTerm < Term
 
-      attr_reader :type, :value
+      def self.type; :date; end
 
       def self.from_json json
         new Date.parse(json[:value])
@@ -13,12 +13,11 @@ module Shokkenki
 
       def initialize value
         @value = value.to_date
-        @type = :date
       end
 
       def to_hash
         {
-          :type => @type,
+          :type => type,
           :value => @value.iso8601
         }
       end

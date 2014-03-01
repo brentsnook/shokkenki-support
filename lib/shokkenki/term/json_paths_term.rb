@@ -9,7 +9,7 @@ module Shokkenki
   module Term
     class JsonPathsTerm < Term
 
-      attr_reader :type, :value
+      def self.type; :json_paths; end
 
       def self.from_json json
         values = json[:value].inject({}) do |hash, kv|
@@ -27,8 +27,6 @@ module Shokkenki
           mapped[k] = v.to_shokkenki_term
           mapped
         end
-
-        @type = :json_paths
       end
 
       def match? compare
@@ -54,7 +52,7 @@ module Shokkenki
         end
 
         {
-          :type => @type,
+          :type => type,
           :value => mapped_values
         }
       end
