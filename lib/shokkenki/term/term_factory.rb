@@ -3,6 +3,8 @@ require_relative 'hash_term'
 require_relative 'regexp_term'
 require_relative 'number_term'
 require_relative 'json_paths_term'
+require_relative 'date_term'
+require_relative 'date_time_term'
 require 'active_support/core_ext/hash/keys'
 
 module Shokkenki
@@ -10,13 +12,12 @@ module Shokkenki
     class TermFactory
 
       def self.factories
-        @factories ||= {
-          :string => StringTerm,
-          :hash => HashTerm,
-          :regexp => RegexpTerm,
-          :number => NumberTerm,
-          :json_paths => JsonPathsTerm
-        }
+        @factories ||= [
+          StringTerm, HashTerm, RegexpTerm, NumberTerm, JsonPathsTerm, DateTerm, DateTimeTerm
+          ].inject({}) do |h, term|
+            h[term.type] = term
+            h
+          end
       end
 
       def self.factory_for type

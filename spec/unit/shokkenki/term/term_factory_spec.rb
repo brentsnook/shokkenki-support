@@ -128,6 +128,14 @@ describe Shokkenki::Term::TermFactory do
     it 'includes json paths' do
       expect(subject.factory_for(:json_paths)).to_not be_nil
     end
+
+    it 'includes date' do
+      expect(subject.factory_for(:date)).to_not be_nil
+    end
+
+    it 'includes date time' do
+      expect(subject.factory_for(:date_time)).to_not be_nil
+    end
   end
 
 end
